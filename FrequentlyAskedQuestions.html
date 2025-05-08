@@ -1,0 +1,205 @@
+<!-- Instructions for adding to Elementor -->
+<!--
+How to implement this FAQ section in Elementor:
+
+1. Add an "HTML" widget to your Elementor page
+2. Copy and paste ALL the code below into the HTML widget (includes HTML, CSS, and JavaScript)
+3. Save and update your page
+-->
+
+<!-- FAQ Section HTML -->
+<div class="custom-faq-container">
+  
+  <div class="custom-faq-item active">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">-</span>
+      <h3>What is the minimum order quantity (MOQ) required?</h3>
+    </div>
+    <div class="custom-faq-answer" style="display: block;">
+      <p>Our minimum order quantity (MOQ) varies depending on the product line and customization requirements. To learn more about the MOQ for your specific product, please contact our specialists. We strive to accommodate orders of all sizes to meet diverse customer needs, so feel free to reach out!</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>Do you provide free design support?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>Yes, we offer complimentary design support to help you create the perfect packaging solution. Our experienced design team will work closely with you to bring your vision to life.</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>Do you offer free samples before production?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>Yes, we provide free samples for most of our products to ensure you're completely satisfied with the quality and design before moving to full production.</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>Where can I purchase custom boxes?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>You can purchase custom boxes directly through our website by submitting a quote request, or by contacting our sales team. We'll guide you through the entire process from design to delivery.</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>What custom packaging options do you offer?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>We offer a wide range of custom packaging options including mailer boxes, shipping boxes, rigid boxes, product boxes, display packaging, and specialized packaging for various industries.</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>What packaging materials do you offer for custom boxes?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>We offer various materials including corrugated cardboard, kraft paper, rigid board, eco-friendly recycled materials, and premium finishes such as soft-touch lamination and foil stamping.</p>
+    </div>
+  </div>
+  
+  <div class="custom-faq-item">
+    <div class="custom-faq-question">
+      <span class="custom-faq-icon">+</span>
+      <h3>How long does production take?</h3>
+    </div>
+    <div class="custom-faq-answer">
+      <p>Production timelines typically range from 2-4 weeks depending on the complexity of your design, quantity ordered, and current production schedule. Rush orders may be accommodated upon request.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+/* FAQ Section Styling */
+.custom-faq-container {
+  max-width: 100%;
+  margin: 20px auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.custom-faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.custom-faq-question {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+}
+
+.custom-faq-question h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  padding-right: 40px; /* Make room for the icon */
+}
+
+.custom-faq-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.custom-faq-answer {
+  display: none;
+  padding:10px;
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+
+.custom-faq-answer p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+.custom-faq-item.active .custom-faq-question {
+  background-color: #00275b;
+}
+
+.custom-faq-item.active .custom-faq-question h3 {
+  color: #fff;
+}
+
+.custom-faq-item.active .custom-faq-icon {
+  color: #fff;
+}
+
+/* First FAQ item styling */
+.custom-faq-item:first-child {
+  background-color: #fff;
+}
+
+/* Mobile responsive styles */
+@media only screen and (max-width: 767px) {
+  .custom-faq-question h3 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .custom-faq-answer p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+</style>
+
+<script>
+jQuery(document).ready(function($) {
+  const faqItems = $('.custom-faq-item');
+  
+  faqItems.each(function() {
+    const item = $(this);
+    const question = item.find('.custom-faq-question');
+    
+    question.on('click', function() {
+      // Close all other FAQ items
+      faqItems.not(item).removeClass('active');
+      faqItems.not(item).find('.custom-faq-answer').slideUp();
+      faqItems.not(item).find('.custom-faq-icon').text('+');
+      
+      // Toggle current FAQ item
+      if (item.hasClass('active')) {
+        item.removeClass('active');
+        item.find('.custom-faq-answer').slideUp();
+        item.find('.custom-faq-icon').text('+');
+      } else {
+        item.addClass('active');
+        item.find('.custom-faq-answer').slideDown();
+        item.find('.custom-faq-icon').text('-');
+      }
+    });
+  });
+});
+</script>
